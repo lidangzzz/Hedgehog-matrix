@@ -1,0 +1,31 @@
+{
+  "name": "hedgehog-matrix",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run build_babel",
+    "build_babel":  "babel src -d lib --extensions \".ts\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lidangzzz/Hedgehog-matrix.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lidangzzz/Hedgehog-matrix/issues"
+  },
+  "homepage": "https://github.com/lidangzzz/Hedgehog-matrix#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-typescript": "^7.8.3"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-overload": "0.0.2"
+  }
+}
