@@ -126,8 +126,8 @@ class Mat {
     }
 
     //add, multiply, minus, divide with one scalar value
-    adds(val: number): Mat { this.each(function (eachMatrixValue: number): number { return eachMatrixValue + val; }); return this; }
-    muls(val: number): Mat { this.each(function (eachMatrixValue: number): number { return eachMatrixValue * val; }); return this; }
+    adds(val: number): Mat { this.clone().each(function (eachMatrixValue: number): number { return eachMatrixValue + val; }); return this; }
+    muls(val: number): Mat { this.clone().each(function (eachMatrixValue: number): number { return eachMatrixValue * val; }); return this; }
     minuss(val: number): Mat { return this.adds(val * (-1)); }
     divs(val: number): Mat { return this.muls(1.0 / val); }
 
@@ -204,6 +204,7 @@ class Mat {
         }
         
         //check if rightOperand is an integer
+        console.log("right = " + rightOperand);
         if (!Number.isInteger(rightOperand) || rightOperand<1) throw new Error("This right operand does not support ^ operator");
 
         var returnMatrix = this.clone();
@@ -523,22 +524,15 @@ function json2mat(json_str: string): Mat {
     throw new Error("Fail to read matrix from json");
 }
 
-//export module
-export {Mat};
 
+export {
+    Mat,
+    csv2mat,
+    mat2csv,
+    mat2json,
+    json2mat
+}
 
-var a = new Mat().range(1,10).reshape(3,3);
-
-var b = a+a;
-
-
-console.log(b.toString())
-
-var c = mul(b,a)
-
-console.log(c)
-
-
-var d = a+b;
-
-console.log(c);
+var a = mat([1,2,3]);
+var b = a*4;
+console.log(b);
