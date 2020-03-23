@@ -126,8 +126,16 @@ class Mat {
     }
 
     //add, multiply, minus, divide with one scalar value
-    adds(val: number): Mat { this.clone().each(function (eachMatrixValue: number): number { return eachMatrixValue + val; }); return this; }
-    muls(val: number): Mat { this.clone().each(function (eachMatrixValue: number): number { return eachMatrixValue * val; }); return this; }
+    adds(val: number): Mat { 
+        var returnMatrix = this.clone(); 
+        returnMatrix.each(function (eachMatrixValue: number): number { return eachMatrixValue + val; }); 
+        return returnMatrix; 
+    }
+    muls(val: number): Mat { 
+        var returnMatrix = this.clone(); 
+        returnMatrix.each(function (eachMatrixValue: number): number { return eachMatrixValue * val; });
+        return returnMatrix.clone();
+    }
     minuss(val: number): Mat { return this.adds(val * (-1)); }
     divs(val: number): Mat { return this.muls(1.0 / val); }
 
@@ -527,12 +535,9 @@ function json2mat(json_str: string): Mat {
 
 export {
     Mat,
+    mat,
     csv2mat,
     mat2csv,
     mat2json,
     json2mat
 }
-
-var a = mat([1,2,3]);
-var b = a*4;
-console.log(b);
