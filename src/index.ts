@@ -211,8 +211,6 @@ class Mat {
             return this;  
         }
         
-        //check if rightOperand is an integer
-        console.log("right = " + rightOperand);
         if (!Number.isInteger(rightOperand) || rightOperand<1) throw new Error("This right operand does not support ^ operator");
 
         var returnMatrix = this.clone();
