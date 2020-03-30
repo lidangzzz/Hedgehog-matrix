@@ -1,16 +1,17 @@
 # Hedgehog-matrix
+
 **Hedgehog-matrix** is a library for JavaScript with sweet operator-overload syntax supported by Babel.
 
-###Setup
+
+### Setup
 
 To use in Node.js, please 
 ```
 npm install Hedgehog-matrix
 ```
-
 Also install Babel and babel-plugin-overload
 
-###Quick start
+### Quick start
 
 ```
 // Import matrix class from library
