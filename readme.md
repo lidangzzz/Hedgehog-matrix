@@ -15,7 +15,7 @@ Also install Babel and babel-plugin-overload
 
 ### Initialize a matrix
 
-```
+```JavaScript
 // Import matrix class from library
 import {Mat} from 'hedgehog-matrix';        
 
@@ -26,12 +26,12 @@ var a = new Mat([[1,2], [3,4]]);
 ```
 
 ### Clone matrix A to B
-```
+```JavaScript
 var b = a.clone();
 ```
 
 ### Matrix manipulation:
-```
+```JavaScript
 // c = a + b*2 + 10
 var c = a+b*2+10;
 
@@ -43,7 +43,7 @@ var x = a.T() * a
 ```
 
 ### Matrix utilities
-```
+```JavaScript
 // initialize a matrix e as: 
 // 1,2,3
 // 4,5,6
@@ -68,7 +68,7 @@ var random_mat = new Mat().random(10,10);
 ```
 
 ### Compare operator overload
-```
+```JavaScript
 // compare a * a with another matrix [[7,10], [15,22]] using operator "=="
 if ( a * a == new Mat([
     [7, 10],
@@ -85,7 +85,7 @@ else
 
 ### Matrix / CSV / JSON convertor
 
-```
+```JavaScript
 var x = csv2mat(
     '1,2,3
      4,5,6
